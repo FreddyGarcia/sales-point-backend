@@ -15,15 +15,21 @@ class BranchSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class ProductFamilySerializer(serializers.ModelSerializer):
+class company(serializers.ModelSerializer):
     class Meta:
-        model = ProductFamily
+        model = Company
         fields = '__all__'
 
 
 class ProductLineSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductLine
+        fields = '__all__'
+
+
+class ProductFamilySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProductFamily
         fields = '__all__'
 
 
