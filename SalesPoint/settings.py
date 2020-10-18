@@ -76,11 +76,11 @@ WSGI_APPLICATION = 'SalesPoint.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sql9371573',
-        'USER': 'sql9371573',
-        'PASSWORD': 'Please wait',
-        'HOST': 'sql9.freemysqlhosting.net',
+        'ENGINE': 'django.db.backends.postgres',
+        'NAME': 'dbmo02n76bn8kp',
+        'USER': 'meytimwgnsvynt',
+        'PASSWORD': '10d98a95878d07067f2b79028252c21086615bdb03e3b4ba9248fbf32726fbee',
+        'HOST': 'ec2-18-210-90-1.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
