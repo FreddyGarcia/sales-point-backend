@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'SalesPoint.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgres',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'dbmo02n76bn8kp',
         'USER': 'meytimwgnsvynt',
         'PASSWORD': '10d98a95878d07067f2b79028252c21086615bdb03e3b4ba9248fbf32726fbee',
