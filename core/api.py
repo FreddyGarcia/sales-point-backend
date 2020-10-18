@@ -4,38 +4,36 @@ from .serializers import *
 from .models import *
 
 
-class CompanyViewSet(viewsets.ModelViewSet):
+class BaseViewSet(viewsets.ModelViewSet):
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class CompanyViewSet(BaseViewSet):
     queryset = Company.objects.all()
-    serializer_class = Company
-    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = CompanySerializer
 
 
-class BranchViewSet(viewsets.ModelViewSet):
+class BranchViewSet(BaseViewSet):
     queryset = Branch.objects.all()
-    serializer_class = Branch
-    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = BranchSerializer
 
 
-class ProductFamilyViewSet(viewsets.ModelViewSet):
+class ProductFamilyViewSet(BaseViewSet):
     queryset = ProductFamily.objects.all()
-    serializer_class = ProductFamily
-    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = ProductFamilySerializer
 
 
-class ProductLineViewSet(viewsets.ModelViewSet):
+class ProductLineViewSet(BaseViewSet):
     queryset = ProductLine.objects.all()
-    serializer_class = ProductLine
-    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = ProductLineSerializer
 
 
-class ProductMeasureUnitViewSet(viewsets.ModelViewSet):
+class ProductMeasureUnitViewSet(BaseViewSet):
     queryset = ProductMeasureUnit.objects.all()
-    serializer_class = ProductMeasureUnit
-    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = ProductMeasureUnitSerializer
 
 
-class ProductViewSet(viewsets.ModelViewSet):
+class ProductViewSet(BaseViewSet):
     queryset = Product.objects.all()
-    serializer_class = Product
-    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = ProductSerializer
 
