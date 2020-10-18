@@ -29,16 +29,24 @@ ALLOWED_HOSTS = ['jf-sales-point.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
-
-INSTALLED_APPS = [
+BUILTIN_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
+
+PLUGINS = [
     'rest_framework'
 ]
+
+OWN_APPS = [
+    'core'
+]
+
+INSTALLED_APPS = BUILTIN_APPS + PLUGINS + OWN_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
