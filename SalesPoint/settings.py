@@ -25,7 +25,7 @@ SECRET_KEY = 'xgq+k%6%!(*e*)95o!^r-uu9idfdq!u((+nxa&o7uk*-8#jwob'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['jf-sales-point.herokuapp.com']
 
 
 # Application definition
