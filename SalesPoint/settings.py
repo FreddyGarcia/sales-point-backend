@@ -76,11 +76,14 @@ WSGI_APPLICATION = 'SalesPoint.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'sql9371573',
+        'USER': 'sql9371573',
+        'PASSWORD': 'Please wait',
+        'HOST': 'sql9.freemysqlhosting.net',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
