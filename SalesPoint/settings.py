@@ -113,6 +113,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# CORS
+# https://www.django-rest-framework.org/topics/ajax-csrf-cors/
+CORS_ORIGIN_ALLOW_ALL = True
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
