@@ -1,45 +1,54 @@
 from rest_framework import serializers
-from django.db import models
 from .models import *
 
+
 # Create your models here.
-class CompanySerializer(serializers.ModelSerializer):
+class BaseSerializer(serializers.ModelSerializer):
     class Meta:
+        exclude = ['created_at', 'updated_at']
+
+
+class CompanySerializer(BaseSerializer):
+
+    class Meta(BaseSerializer.Meta):
         model = Company
-        fields = '__all__'
 
 
-class BranchSerializer(serializers.ModelSerializer):
-    class Meta:
+class BranchSerializer(BaseSerializer):
+    company = CompanySerializer()
+
+    class Meta(BaseSerializer.Meta):
         model = Branch
-        fields = '__all__'
 
 
-class company(serializers.ModelSerializer):
-    class Meta:
+class company(BaseSerializer):
+
+    class Meta(BaseSerializer.Meta):
         model = Company
-        fields = '__all__'
 
 
-class ProductLineSerializer(serializers.ModelSerializer):
-    class Meta:
+class ProductLineSerializer(BaseSerializer):
+
+    class Meta(BaseSerializer.Meta):
         model = ProductLine
-        fields = '__all__'
 
 
-class ProductFamilySerializer(serializers.ModelSerializer):
-    class Meta:
+class ProductFamilySerializer(BaseSerializer):
+
+    class Meta(BaseSerializer.Meta):
         model = ProductFamily
-        fields = '__all__'
 
 
-class ProductMeasureUnitSerializer(serializers.ModelSerializer):
-    class Meta:
+class ProductMeasureUnitSerializer(BaseSerializer):
+
+    class Meta(BaseSerializer.Meta):
         model = ProductMeasureUnit
-        fields = '__all__'
 
 
-class ProductSerializer(serializers.ModelSerializer):
-    class Meta:
+class ProductSerializer(BaseSerializer):
+    family = ProductFamilySerializer()
+    company = CompanySerializer()
+    unit = ProductMeasureUnitSerializer()
+
+    class Meta(BaseSerializer.Meta):
         model = Product
-        fields = '__all__'
