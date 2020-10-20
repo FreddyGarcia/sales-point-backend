@@ -1,7 +1,9 @@
+import uuid
 from django.db import models
 
 # Create your models here.
 class Company(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100)
     sector = models.CharField(max_length=100)
 
@@ -14,6 +16,7 @@ class Company(models.Model):
 
 
 class Branch(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100)
     company = models.ForeignKey(Company, on_delete=models.PROTECT)
     latitude = models.DecimalField(max_digits=9, decimal_places=6)
