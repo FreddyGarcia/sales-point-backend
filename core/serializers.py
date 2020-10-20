@@ -46,9 +46,6 @@ class ProductMeasureUnitSerializer(BaseSerializer):
 
 
 class ProductSerializer(BaseSerializer):
-    family = ProductFamilySerializer()
-    company = CompanySerializer()
-    unit = ProductMeasureUnitSerializer()
 
     class Meta(BaseSerializer.Meta):
         model = Product
