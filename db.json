@@ -3,11 +3,11 @@
     "model": "admin.logentry",
     "pk": 1,
     "fields": {
-        "action_time": "2020-10-20T04:31:17.276Z",
+        "action_time": "2020-10-20T05:25:37.928Z",
         "user": 1,
-        "content_type": 8,
-        "object_id": "ed89038f-e16a-4083-87fb-9fbc6d75921f",
-        "object_repr": "Super Mercado Ole",
+        "content_type": 4,
+        "object_id": "2",
+        "object_repr": "janfry",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -16,24 +16,24 @@
     "model": "admin.logentry",
     "pk": 2,
     "fields": {
-        "action_time": "2020-10-20T04:31:22.015Z",
+        "action_time": "2020-10-20T05:25:42.624Z",
         "user": 1,
-        "content_type": 7,
-        "object_id": "b8c66092-9e5b-467e-b2fe-6a18725e2ded",
-        "object_repr": "Sucursal 1",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
+        "content_type": 4,
+        "object_id": "2",
+        "object_repr": "janfry",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Superuser status\"]}}]"
     }
 },
 {
     "model": "admin.logentry",
     "pk": 3,
     "fields": {
-        "action_time": "2020-10-20T04:49:36.008Z",
+        "action_time": "2020-10-20T05:25:53.697Z",
         "user": 1,
-        "content_type": 9,
-        "object_id": "1",
-        "object_repr": "Familia 1",
+        "content_type": 8,
+        "object_id": "10810bbc-dc8b-4726-9820-d0a358b8aebb",
+        "object_repr": "Super Mercado Ole",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -42,11 +42,11 @@
     "model": "admin.logentry",
     "pk": 4,
     "fields": {
-        "action_time": "2020-10-20T04:49:57.947Z",
+        "action_time": "2020-10-20T05:26:00.263Z",
         "user": 1,
-        "content_type": 9,
-        "object_id": "2",
-        "object_repr": "Familia 1",
+        "content_type": 7,
+        "object_id": "76280285-d3f3-402a-a807-c375cc59659e",
+        "object_repr": "Sucursal 1",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -55,11 +55,11 @@
     "model": "admin.logentry",
     "pk": 5,
     "fields": {
-        "action_time": "2020-10-20T04:52:49.786Z",
+        "action_time": "2020-10-20T05:26:16.743Z",
         "user": 1,
-        "content_type": 8,
-        "object_id": "3302e9a4-9080-4cfc-8cb6-673ae1569b43",
-        "object_repr": "Super Mercado Ole",
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Familia 1",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -68,11 +68,11 @@
     "model": "admin.logentry",
     "pk": 6,
     "fields": {
-        "action_time": "2020-10-20T04:52:56.037Z",
+        "action_time": "2020-10-20T05:26:29.536Z",
         "user": 1,
         "content_type": 10,
         "object_id": "1",
-        "object_repr": "Pollo",
+        "object_repr": "Unidad",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -81,143 +81,13 @@
     "model": "admin.logentry",
     "pk": 7,
     "fields": {
-        "action_time": "2020-10-20T04:53:00.166Z",
+        "action_time": "2020-10-20T05:26:30.860Z",
         "user": 1,
         "content_type": 12,
         "object_id": "1",
-        "object_repr": "Pollo",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 8,
-    "fields": {
-        "action_time": "2020-10-20T04:53:00.492Z",
-        "user": 1,
-        "content_type": 12,
-        "object_id": "2",
-        "object_repr": "Pollo",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 9,
-    "fields": {
-        "action_time": "2020-10-20T05:01:42.149Z",
-        "user": 1,
-        "content_type": 12,
-        "object_id": "2",
-        "object_repr": "Pollo",
-        "action_flag": 3,
-        "change_message": ""
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 10,
-    "fields": {
-        "action_time": "2020-10-20T05:01:42.241Z",
-        "user": 1,
-        "content_type": 12,
-        "object_id": "1",
-        "object_repr": "Pollo",
-        "action_flag": 3,
-        "change_message": ""
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 11,
-    "fields": {
-        "action_time": "2020-10-20T05:01:47.393Z",
-        "user": 1,
-        "content_type": 8,
-        "object_id": "3302e9a4-9080-4cfc-8cb6-673ae1569b43",
-        "object_repr": "Super Mercado Ole",
-        "action_flag": 3,
-        "change_message": ""
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 12,
-    "fields": {
-        "action_time": "2020-10-20T05:02:00.133Z",
-        "user": 1,
-        "content_type": 10,
-        "object_id": "1",
-        "object_repr": "Unidad",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 13,
-    "fields": {
-        "action_time": "2020-10-20T05:02:05.471Z",
-        "user": 1,
-        "content_type": 9,
-        "object_id": "1",
-        "object_repr": "Familia 2",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 14,
-    "fields": {
-        "action_time": "2020-10-20T05:02:15.038Z",
-        "user": 1,
-        "content_type": 11,
-        "object_id": "1",
-        "object_repr": "Linea 1",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 15,
-    "fields": {
-        "action_time": "2020-10-20T05:02:31.166Z",
-        "user": 1,
-        "content_type": 12,
-        "object_id": "3",
         "object_repr": "Producto 1",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 16,
-    "fields": {
-        "action_time": "2020-10-20T05:02:51.754Z",
-        "user": 1,
-        "content_type": 4,
-        "object_id": "2",
-        "object_repr": "janfry",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 17,
-    "fields": {
-        "action_time": "2020-10-20T05:03:22.989Z",
-        "user": 1,
-        "content_type": 4,
-        "object_id": "2",
-        "object_repr": "janfry",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Superuser status\"]}}]"
     }
 },
 {
@@ -656,8 +526,8 @@
     "model": "auth.user",
     "pk": 1,
     "fields": {
-        "password": "pbkdf2_sha256$216000$WdtjOwRtZzwz$xeIgs44w5ZtUe45D3WnPJ+Xm1sFFQCF1dp7QqLnf310=",
-        "last_login": "2020-10-20T04:30:57.414Z",
+        "password": "pbkdf2_sha256$216000$2wxImGG7k0j5$RjCNO95KtBkOmAl0SUih89KHO5tY0uj0zgIicNPPaQk=",
+        "last_login": "2020-10-20T05:25:28.478Z",
         "is_superuser": true,
         "username": "chito",
         "first_name": "",
@@ -665,7 +535,7 @@
         "email": "",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2020-10-20T04:30:32.837Z",
+        "date_joined": "2020-10-20T05:25:11.867Z",
         "groups": [],
         "user_permissions": []
     }
@@ -674,7 +544,7 @@
     "model": "auth.user",
     "pk": 2,
     "fields": {
-        "password": "pbkdf2_sha256$216000$bz6h52iXfYIv$z0DqHhaCF7I78aPYMG3Xdt+hhEGs3YLw9Qsa2v70Fyw=",
+        "password": "pbkdf2_sha256$216000$Jfu9CtWgqjcU$e4tp82Mj6mA0FFLoOusmCY8z/OLnZ9kr700Vcu2LkXs=",
         "last_login": null,
         "is_superuser": true,
         "username": "janfry",
@@ -683,188 +553,72 @@
         "email": "",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2020-10-20T05:02:51Z",
+        "date_joined": "2020-10-20T05:25:37Z",
         "groups": [],
         "user_permissions": []
     }
 },
 {
-    "model": "contenttypes.contenttype",
-    "pk": 1,
-    "fields": {
-        "app_label": "admin",
-        "model": "logentry"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 2,
-    "fields": {
-        "app_label": "auth",
-        "model": "permission"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 3,
-    "fields": {
-        "app_label": "auth",
-        "model": "group"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 4,
-    "fields": {
-        "app_label": "auth",
-        "model": "user"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 5,
-    "fields": {
-        "app_label": "contenttypes",
-        "model": "contenttype"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 6,
-    "fields": {
-        "app_label": "sessions",
-        "model": "session"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 7,
-    "fields": {
-        "app_label": "core",
-        "model": "branch"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 8,
-    "fields": {
-        "app_label": "core",
-        "model": "company"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 9,
-    "fields": {
-        "app_label": "core",
-        "model": "productfamily"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 10,
-    "fields": {
-        "app_label": "core",
-        "model": "productmeasureunit"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 11,
-    "fields": {
-        "app_label": "core",
-        "model": "productline"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 12,
-    "fields": {
-        "app_label": "core",
-        "model": "product"
-    }
-},
-{
     "model": "sessions.session",
-    "pk": "idjps63ol5top804bx3sam4guukdekqy",
+    "pk": "9ucj5e15pzla0qey2r2lwy9hnoxc1ivq",
     "fields": {
-        "session_data": ".eJxVjEEOwiAQRe_C2pApQaAu3XsGMsMMUjWQlHZlvLtt0oVu33v_v1XEdSlx7TLHidVFDer0ywjTU-ou-IH13nRqdZkn0nuiD9v1rbG8rkf7d1Cwl20N7FFIMlkZMFkR9sQ5bEQIc3AYxOcE7BL40SSHbOHsGQGNARxJfb5RpToy:1kUjIX:QYCFfLStesFz3k6iPt2Vxlgjz79-Gksqb897jLck_60",
-        "expire_date": "2020-11-03T04:30:57.487Z"
+        "session_data": ".eJxVjEEOwiAQRe_C2hAYGYou3XuGZoYBqRpISrsy3l2bdKHb_977LzXSupRx7WkeJ1FnZdXhd2OKj1Q3IHeqt6Zjq8s8sd4UvdOur03S87K7fweFevnWhvkIEohzkEQJLKJHMDkMnG08kY_egbCJCcEJeQrkXBQxgGggD-r9AQNlOHg:1kUk9I:h8GLc1L502BAYc9mekkuYZchr-zayWmQmk5NljIiqWU",
+        "expire_date": "2020-11-03T05:25:28.535Z"
     }
 },
 {
     "model": "core.company",
-    "pk": "ed89038f-e16a-4083-87fb-9fbc6d75921f",
+    "pk": "10810bbc-dc8b-4726-9820-d0a358b8aebb",
     "fields": {
-        "created_at": "2020-10-20T04:31:17.275Z",
-        "updated_at": "2020-10-20T04:31:17.275Z",
+        "created_at": "2020-10-20T05:25:53.697Z",
+        "updated_at": "2020-10-20T05:25:53.697Z",
         "name": "Super Mercado Ole",
         "sector": "Av. Duarte"
     }
 },
 {
     "model": "core.branch",
-    "pk": "b8c66092-9e5b-467e-b2fe-6a18725e2ded",
+    "pk": "76280285-d3f3-402a-a807-c375cc59659e",
     "fields": {
-        "created_at": "2020-10-20T04:31:22.015Z",
-        "updated_at": "2020-10-20T04:31:22.015Z",
+        "created_at": "2020-10-20T05:26:00.263Z",
+        "updated_at": "2020-10-20T05:26:00.263Z",
         "name": "Sucursal 1",
-        "company": "ed89038f-e16a-4083-87fb-9fbc6d75921f",
-        "latitude": "12.120000",
-        "longitude": "12.120000"
+        "company": "10810bbc-dc8b-4726-9820-d0a358b8aebb",
+        "latitude": "1.000000",
+        "longitude": "12.000000"
     }
 },
 {
     "model": "core.productfamily",
     "pk": 1,
     "fields": {
-        "created_at": "2020-10-20T04:49:36.008Z",
-        "updated_at": "2020-10-20T05:02:05.470Z",
-        "description": "Familia 2"
-    }
-},
-{
-    "model": "core.productfamily",
-    "pk": 2,
-    "fields": {
-        "created_at": "2020-10-20T04:49:57.946Z",
-        "updated_at": "2020-10-20T04:49:57.946Z",
+        "created_at": "2020-10-20T05:26:16.743Z",
+        "updated_at": "2020-10-20T05:26:16.743Z",
         "description": "Familia 1"
-    }
-},
-{
-    "model": "core.productline",
-    "pk": 1,
-    "fields": {
-        "created_at": "2020-10-20T05:02:15.037Z",
-        "updated_at": "2020-10-20T05:02:15.037Z",
-        "description": "Linea 1",
-        "company": "ed89038f-e16a-4083-87fb-9fbc6d75921f",
-        "branch": "b8c66092-9e5b-467e-b2fe-6a18725e2ded"
     }
 },
 {
     "model": "core.productmeasureunit",
     "pk": 1,
     "fields": {
-        "created_at": "2020-10-20T04:52:56.037Z",
-        "updated_at": "2020-10-20T05:02:00.132Z",
+        "created_at": "2020-10-20T05:26:29.535Z",
+        "updated_at": "2020-10-20T05:26:29.535Z",
         "description": "Unidad",
         "symbol": "UN",
-        "unit_value": 2,
+        "unit_value": 1,
         "image_url": "http://127.0.0.1:8000/admin/core/product/add/"
     }
 },
 {
     "model": "core.product",
-    "pk": 3,
+    "pk": 1,
     "fields": {
-        "created_at": "2020-10-20T05:02:31.166Z",
-        "updated_at": "2020-10-20T05:02:31.166Z",
+        "created_at": "2020-10-20T05:26:30.859Z",
+        "updated_at": "2020-10-20T05:26:30.859Z",
         "description": "Producto 1",
         "barcode": "1",
-        "family": 2,
-        "company": "ed89038f-e16a-4083-87fb-9fbc6d75921f",
+        "family": 1,
+        "company": "10810bbc-dc8b-4726-9820-d0a358b8aebb",
         "image_url": "http://127.0.0.1:8000/admin/core/product/add/",
         "unit": 1
     }
