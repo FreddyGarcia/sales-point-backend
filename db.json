@@ -310,72 +310,72 @@
     "model": "auth.permission",
     "pk": 25,
     "fields": {
-        "name": "Can add Branch",
+        "name": "Can add Company",
         "content_type": 7,
-        "codename": "add_branch"
+        "codename": "add_company"
     }
 },
 {
     "model": "auth.permission",
     "pk": 26,
     "fields": {
-        "name": "Can change Branch",
+        "name": "Can change Company",
         "content_type": 7,
-        "codename": "change_branch"
+        "codename": "change_company"
     }
 },
 {
     "model": "auth.permission",
     "pk": 27,
     "fields": {
-        "name": "Can delete Branch",
+        "name": "Can delete Company",
         "content_type": 7,
-        "codename": "delete_branch"
+        "codename": "delete_company"
     }
 },
 {
     "model": "auth.permission",
     "pk": 28,
     "fields": {
-        "name": "Can view Branch",
+        "name": "Can view Company",
         "content_type": 7,
-        "codename": "view_branch"
+        "codename": "view_company"
     }
 },
 {
     "model": "auth.permission",
     "pk": 29,
     "fields": {
-        "name": "Can add Company",
+        "name": "Can add Branch",
         "content_type": 8,
-        "codename": "add_company"
+        "codename": "add_branch"
     }
 },
 {
     "model": "auth.permission",
     "pk": 30,
     "fields": {
-        "name": "Can change Company",
+        "name": "Can change Branch",
         "content_type": 8,
-        "codename": "change_company"
+        "codename": "change_branch"
     }
 },
 {
     "model": "auth.permission",
     "pk": 31,
     "fields": {
-        "name": "Can delete Company",
+        "name": "Can delete Branch",
         "content_type": 8,
-        "codename": "delete_company"
+        "codename": "delete_branch"
     }
 },
 {
     "model": "auth.permission",
     "pk": 32,
     "fields": {
-        "name": "Can view Company",
+        "name": "Can view Branch",
         "content_type": 8,
-        "codename": "view_company"
+        "codename": "view_branch"
     }
 },
 {
@@ -418,72 +418,72 @@
     "model": "auth.permission",
     "pk": 37,
     "fields": {
-        "name": "Can add Measure Unit",
+        "name": "Can add Product Line",
         "content_type": 10,
-        "codename": "add_productmeasureunit"
+        "codename": "add_productline"
     }
 },
 {
     "model": "auth.permission",
     "pk": 38,
     "fields": {
-        "name": "Can change Measure Unit",
+        "name": "Can change Product Line",
         "content_type": 10,
-        "codename": "change_productmeasureunit"
+        "codename": "change_productline"
     }
 },
 {
     "model": "auth.permission",
     "pk": 39,
     "fields": {
-        "name": "Can delete Measure Unit",
+        "name": "Can delete Product Line",
         "content_type": 10,
-        "codename": "delete_productmeasureunit"
+        "codename": "delete_productline"
     }
 },
 {
     "model": "auth.permission",
     "pk": 40,
     "fields": {
-        "name": "Can view Measure Unit",
+        "name": "Can view Product Line",
         "content_type": 10,
-        "codename": "view_productmeasureunit"
+        "codename": "view_productline"
     }
 },
 {
     "model": "auth.permission",
     "pk": 41,
     "fields": {
-        "name": "Can add Product Line",
+        "name": "Can add Measure Unit",
         "content_type": 11,
-        "codename": "add_productline"
+        "codename": "add_productmeasureunit"
     }
 },
 {
     "model": "auth.permission",
     "pk": 42,
     "fields": {
-        "name": "Can change Product Line",
+        "name": "Can change Measure Unit",
         "content_type": 11,
-        "codename": "change_productline"
+        "codename": "change_productmeasureunit"
     }
 },
 {
     "model": "auth.permission",
     "pk": 43,
     "fields": {
-        "name": "Can delete Product Line",
+        "name": "Can delete Measure Unit",
         "content_type": 11,
-        "codename": "delete_productline"
+        "codename": "delete_productmeasureunit"
     }
 },
 {
     "model": "auth.permission",
     "pk": 44,
     "fields": {
-        "name": "Can view Product Line",
+        "name": "Can view Measure Unit",
         "content_type": 11,
-        "codename": "view_productline"
+        "codename": "view_productmeasureunit"
     }
 },
 {
