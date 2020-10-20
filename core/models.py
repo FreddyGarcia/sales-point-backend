@@ -1,8 +1,26 @@
 import uuid
 from django.db import models
+from django.utils import timezone
+
 
 # Create your models here.
-class Company(models.Model):
+
+class BaseModel(models.Model):
+    created_at = models.DateTimeField(editable=False)
+    updated_at = models.DateTimeField(editable=False)
+
+    def save(self, *args, **kwargs):
+        ''' On save, update timestamps '''
+        if not self.id:
+            self.created = timezone.now()
+        self.modified = timezone.now()
+        return super(BaseModel, self).save(*args, **kwargs)
+
+    class Meta:
+        abstract = True
+
+
+class Company(BaseModel):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100)
     sector = models.CharField(max_length=100)
@@ -15,7 +33,7 @@ class Company(models.Model):
         verbose_name_plural = "Companies"
 
 
-class Branch(models.Model):
+class Branch(BaseModel):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100)
     company = models.ForeignKey(Company, on_delete=models.PROTECT)
@@ -30,7 +48,7 @@ class Branch(models.Model):
         verbose_name_plural = "Branches"
 
 
-class ProductFamily(models.Model):
+class ProductFamily(BaseModel):
     description = models.CharField(max_length=100)
 
     def __str__(self):
@@ -41,7 +59,7 @@ class ProductFamily(models.Model):
         verbose_name_plural = "Product Families"
 
 
-class ProductLine(models.Model):
+class ProductLine(BaseModel):
     description = models.CharField(max_length=100)
     company = models.ForeignKey(Company, on_delete=models.PROTECT)
     branch = models.ForeignKey(Branch, on_delete=models.PROTECT)
@@ -54,7 +72,7 @@ class ProductLine(models.Model):
         verbose_name_plural = "Product Lines"
 
 
-class ProductMeasureUnit(models.Model):
+class ProductMeasureUnit(BaseModel):
     description = models.CharField(max_length=100)
     symbol = models.CharField(max_length=5)
     unit_value = models.IntegerField()
@@ -68,7 +86,7 @@ class ProductMeasureUnit(models.Model):
         verbose_name_plural = "Measure Units"
 
 
-class Product(models.Model):
+class Product(BaseModel):
     description = models.CharField(max_length=200)
     barcode = models.CharField(max_length=50)
     family = models.ForeignKey(ProductFamily, on_delete=models.PROTECT)
