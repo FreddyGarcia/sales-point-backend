@@ -1,10 +1,663 @@
 [
-    {
-      "model": "auth.user",
-      "pk": 1,
-      "fields": {
-        "password": "pbkdf2_sha256$216000$t0TvziqzbYQ8$zK4V7hTiWRmqgFJYJng7Isj04hJERBy7KARDvRdcR1Y=",
-        "last_login": "2020-10-18T19:58:26.297Z",
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2020-10-20T04:31:17.276Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "ed89038f-e16a-4083-87fb-9fbc6d75921f",
+        "object_repr": "Super Mercado Ole",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2020-10-20T04:31:22.015Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "b8c66092-9e5b-467e-b2fe-6a18725e2ded",
+        "object_repr": "Sucursal 1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2020-10-20T04:49:36.008Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Familia 1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2020-10-20T04:49:57.947Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "2",
+        "object_repr": "Familia 1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2020-10-20T04:52:49.786Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3302e9a4-9080-4cfc-8cb6-673ae1569b43",
+        "object_repr": "Super Mercado Ole",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2020-10-20T04:52:56.037Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "Pollo",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2020-10-20T04:53:00.166Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "1",
+        "object_repr": "Pollo",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2020-10-20T04:53:00.492Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "2",
+        "object_repr": "Pollo",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2020-10-20T05:01:42.149Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "2",
+        "object_repr": "Pollo",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2020-10-20T05:01:42.241Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "1",
+        "object_repr": "Pollo",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2020-10-20T05:01:47.393Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3302e9a4-9080-4cfc-8cb6-673ae1569b43",
+        "object_repr": "Super Mercado Ole",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2020-10-20T05:02:00.133Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "Unidad",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2020-10-20T05:02:05.471Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Familia 2",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2020-10-20T05:02:15.038Z",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "1",
+        "object_repr": "Linea 1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2020-10-20T05:02:31.166Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "3",
+        "object_repr": "Producto 1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2020-10-20T05:02:51.754Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "2",
+        "object_repr": "janfry",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2020-10-20T05:03:22.989Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "2",
+        "object_repr": "janfry",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Superuser status\"]}}]"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 4,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 4,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 4,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 4,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 5,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 5,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 5,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 5,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 6,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 6,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 6,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 6,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add Branch",
+        "content_type": 7,
+        "codename": "add_branch"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change Branch",
+        "content_type": 7,
+        "codename": "change_branch"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete Branch",
+        "content_type": 7,
+        "codename": "delete_branch"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view Branch",
+        "content_type": 7,
+        "codename": "view_branch"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add Company",
+        "content_type": 8,
+        "codename": "add_company"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change Company",
+        "content_type": 8,
+        "codename": "change_company"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete Company",
+        "content_type": 8,
+        "codename": "delete_company"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view Company",
+        "content_type": 8,
+        "codename": "view_company"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add Product Family",
+        "content_type": 9,
+        "codename": "add_productfamily"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change Product Family",
+        "content_type": 9,
+        "codename": "change_productfamily"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete Product Family",
+        "content_type": 9,
+        "codename": "delete_productfamily"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view Product Family",
+        "content_type": 9,
+        "codename": "view_productfamily"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add Measure Unit",
+        "content_type": 10,
+        "codename": "add_productmeasureunit"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change Measure Unit",
+        "content_type": 10,
+        "codename": "change_productmeasureunit"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete Measure Unit",
+        "content_type": 10,
+        "codename": "delete_productmeasureunit"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view Measure Unit",
+        "content_type": 10,
+        "codename": "view_productmeasureunit"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add Product Line",
+        "content_type": 11,
+        "codename": "add_productline"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change Product Line",
+        "content_type": 11,
+        "codename": "change_productline"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete Product Line",
+        "content_type": 11,
+        "codename": "delete_productline"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view Product Line",
+        "content_type": 11,
+        "codename": "view_productline"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add Product",
+        "content_type": 12,
+        "codename": "add_product"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change Product",
+        "content_type": 12,
+        "codename": "change_product"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete Product",
+        "content_type": 12,
+        "codename": "delete_product"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view Product",
+        "content_type": 12,
+        "codename": "view_product"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$216000$WdtjOwRtZzwz$xeIgs44w5ZtUe45D3WnPJ+Xm1sFFQCF1dp7QqLnf310=",
+        "last_login": "2020-10-20T04:30:57.414Z",
         "is_superuser": true,
         "username": "chito",
         "first_name": "",
@@ -12,83 +665,208 @@
         "email": "",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2020-10-18T16:44:07.133Z",
+        "date_joined": "2020-10-20T04:30:32.837Z",
         "groups": [],
         "user_permissions": []
-      }
-    },
-    {
-      "model": "auth.user",
-      "pk": 2,
-      "fields": {
-        "password": "pbkdf2_sha256$216000$Eg4rJhn0fX6h$GikqUZzwKPfPseL5I2/ktLHj+xt/xgT+8itOcBP/I90=",
-        "last_login": "2020-10-18T19:58:45.404Z",
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$216000$bz6h52iXfYIv$z0DqHhaCF7I78aPYMG3Xdt+hhEGs3YLw9Qsa2v70Fyw=",
+        "last_login": null,
         "is_superuser": true,
-        "username": "janfree",
+        "username": "janfry",
         "first_name": "",
         "last_name": "",
         "email": "",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2020-10-18T19:57:57Z",
+        "date_joined": "2020-10-20T05:02:51Z",
         "groups": [],
         "user_permissions": []
-      }
-    },
-    {
-      "model": "core.company",
-      "pk": 1,
-      "fields": {
-        "name": "test",
-        "sector": "test"
-      }
-    },
-    {
-      "model": "core.branch",
-      "pk": 1,
-      "fields": {
-        "name": "test",
-        "company": 1,
-        "latitude": "2.200000",
-        "longitude": "2.200000"
-      }
-    },
-    {
-      "model": "core.productfamily",
-      "pk": 1,
-      "fields": {
-        "description": "family"
-      }
-    },
-    {
-      "model": "core.productline",
-      "pk": 1,
-      "fields": {
-        "description": "line",
-        "company": 1,
-        "branch": 1
-      }
-    },
-    {
-      "model": "core.productmeasureunit",
-      "pk": 1,
-      "fields": {
-        "description": "unit",
-        "symbol": "U",
-        "unit_value": 1,
-        "image_url": "https://img.freepik.com/free-icon/full-size_318-108693.jpg?size=338&ext=jpg"
-      }
-    },
-    {
-      "model": "core.product",
-      "pk": 1,
-      "fields": {
-        "description": "product 1",
-        "barcode": "A",
-        "family": 1,
-        "company": 1,
-        "image_url": "https://img.freepik.com/free-icon/full-size_318-108693.jpg?size=338&ext=jpg",
-        "unit": 1
-      }
     }
-  ]
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "core",
+        "model": "branch"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "core",
+        "model": "company"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "core",
+        "model": "productfamily"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "core",
+        "model": "productmeasureunit"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "core",
+        "model": "productline"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "core",
+        "model": "product"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "idjps63ol5top804bx3sam4guukdekqy",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2pApQaAu3XsGMsMMUjWQlHZlvLtt0oVu33v_v1XEdSlx7TLHidVFDer0ywjTU-ou-IH13nRqdZkn0nuiD9v1rbG8rkf7d1Cwl20N7FFIMlkZMFkR9sQ5bEQIc3AYxOcE7BL40SSHbOHsGQGNARxJfb5RpToy:1kUjIX:QYCFfLStesFz3k6iPt2Vxlgjz79-Gksqb897jLck_60",
+        "expire_date": "2020-11-03T04:30:57.487Z"
+    }
+},
+{
+    "model": "core.company",
+    "pk": "ed89038f-e16a-4083-87fb-9fbc6d75921f",
+    "fields": {
+        "created_at": "2020-10-20T04:31:17.275Z",
+        "updated_at": "2020-10-20T04:31:17.275Z",
+        "name": "Super Mercado Ole",
+        "sector": "Av. Duarte"
+    }
+},
+{
+    "model": "core.branch",
+    "pk": "b8c66092-9e5b-467e-b2fe-6a18725e2ded",
+    "fields": {
+        "created_at": "2020-10-20T04:31:22.015Z",
+        "updated_at": "2020-10-20T04:31:22.015Z",
+        "name": "Sucursal 1",
+        "company": "ed89038f-e16a-4083-87fb-9fbc6d75921f",
+        "latitude": "12.120000",
+        "longitude": "12.120000"
+    }
+},
+{
+    "model": "core.productfamily",
+    "pk": 1,
+    "fields": {
+        "created_at": "2020-10-20T04:49:36.008Z",
+        "updated_at": "2020-10-20T05:02:05.470Z",
+        "description": "Familia 2"
+    }
+},
+{
+    "model": "core.productfamily",
+    "pk": 2,
+    "fields": {
+        "created_at": "2020-10-20T04:49:57.946Z",
+        "updated_at": "2020-10-20T04:49:57.946Z",
+        "description": "Familia 1"
+    }
+},
+{
+    "model": "core.productline",
+    "pk": 1,
+    "fields": {
+        "created_at": "2020-10-20T05:02:15.037Z",
+        "updated_at": "2020-10-20T05:02:15.037Z",
+        "description": "Linea 1",
+        "company": "ed89038f-e16a-4083-87fb-9fbc6d75921f",
+        "branch": "b8c66092-9e5b-467e-b2fe-6a18725e2ded"
+    }
+},
+{
+    "model": "core.productmeasureunit",
+    "pk": 1,
+    "fields": {
+        "created_at": "2020-10-20T04:52:56.037Z",
+        "updated_at": "2020-10-20T05:02:00.132Z",
+        "description": "Unidad",
+        "symbol": "UN",
+        "unit_value": 2,
+        "image_url": "http://127.0.0.1:8000/admin/core/product/add/"
+    }
+},
+{
+    "model": "core.product",
+    "pk": 3,
+    "fields": {
+        "created_at": "2020-10-20T05:02:31.166Z",
+        "updated_at": "2020-10-20T05:02:31.166Z",
+        "description": "Producto 1",
+        "barcode": "1",
+        "family": 2,
+        "company": "ed89038f-e16a-4083-87fb-9fbc6d75921f",
+        "image_url": "http://127.0.0.1:8000/admin/core/product/add/",
+        "unit": 1
+    }
+}
+]
