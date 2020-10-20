@@ -40,7 +40,8 @@ BUILTIN_APPS = [
 
 PLUGINS = [
     'corsheaders',
-    'rest_framework'
+    'rest_framework',
+    'django_filters'
 ]
 
 OWN_APPS = [
@@ -139,6 +140,10 @@ STATIC_URL = '/static/'
 STATIC_ROOT = './assets'
 
 REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'PAGE_SIZE': 100,
+    'ORDERING_PARAM' : 'order',
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
