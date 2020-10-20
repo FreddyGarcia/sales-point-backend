@@ -6,15 +6,8 @@ from django.utils import timezone
 # Create your models here.
 
 class BaseModel(models.Model):
-    created_at = models.DateTimeField(editable=False)
-    updated_at = models.DateTimeField(editable=False)
-
-    def save(self, *args, **kwargs):
-        ''' On save, update timestamps '''
-        if not self.id:
-            self.created = timezone.now()
-        self.modified = timezone.now()
-        return super(BaseModel, self).save(*args, **kwargs)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         abstract = True
