@@ -3,7 +3,7 @@ from .models import *
 # Register your models here.
 
 class BaseModelAdmin(admin.ModelAdmin):
-      pass
+      readonly_fields=('created_by', 'updated_by')
 
 admin.site.register(Company, BaseModelAdmin)
 admin.site.register(Branch, BaseModelAdmin)
