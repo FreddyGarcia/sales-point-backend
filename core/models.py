@@ -1,13 +1,28 @@
 import uuid
 from django.db import models
-from django.utils import timezone
+from django.contrib.auth.models import User
 
 
 # Create your models here.
+class GeneralManager(models.Manager):
+    def get_queryset(self):
+        return super(GeneralManager, self).get_queryset().filter(is_enabled=True)
+
 
 class BaseModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    is_enabled = models.BooleanField(default=True)
+    created_by = models.ForeignKey(User, on_delete=models.PROTECT, related_name='%(class)s_created_by')
+    updated_by = models.ForeignKey(User, on_delete=models.PROTECT, related_name='%(class)s_updated_by')
+
+    objects = models.Manager()
+    api_objects = GeneralManager()
+
+    def delete(self):
+        # do not delete the instance, only disable it
+        self.is_enabled = False
+        self.save()
 
     class Meta:
         abstract = True

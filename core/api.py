@@ -17,31 +17,31 @@ class BaseViewSet(viewsets.ModelViewSet):
 
 
 class CompanyViewSet(BaseViewSet):
-    queryset = Company.objects.all()
+    queryset = Company.api_objects.all()
     serializer_class = CompanySerializer
 
 
 class BranchViewSet(BaseViewSet):
-    queryset = Branch.objects.all()
+    queryset = Branch.api_objects.all()
     serializer_class = BranchSerializer
 
 
 class ProductFamilyViewSet(BaseViewSet):
-    queryset = ProductFamily.objects.all()
+    queryset = ProductFamily.api_objects.all()
     serializer_class = ProductFamilySerializer
 
 
 class ProductLineViewSet(BaseViewSet):
-    queryset = ProductLine.objects.all()
+    queryset = ProductLine.api_objects.all()
     serializer_class = ProductLineSerializer
 
 
 class ProductMeasureUnitViewSet(BaseViewSet):
-    queryset = ProductMeasureUnit.objects.all()
+    queryset = ProductMeasureUnit.api_objects.all()
     serializer_class = ProductMeasureUnitSerializer
 
 
 class ProductViewSet(BaseViewSet):
-    queryset = Product.objects.all()
+    queryset = Product.api_objects.all()
     serializer_class = ProductSerializer
 
