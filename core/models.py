@@ -56,6 +56,20 @@ class Branch(BaseModel):
         verbose_name_plural = "Branches"
 
 
+class BranchAddress(BaseModel):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    street = models.CharField(max_length=200)
+    city = models.CharField(max_length=200)
+    branch_address = models.OneToOneField(Branch, on_delete=models.PROTECT)
+
+    def __str__(self):
+        return f'{self.street} / {self.city}'
+
+    class Meta:
+        verbose_name = "Branch Address"
+        verbose_name_plural = "Branches Address"
+
+
 class ProductFamily(BaseModel):
     description = models.CharField(max_length=100)
 
@@ -84,7 +98,7 @@ class ProductMeasureUnit(BaseModel):
     description = models.CharField(max_length=100)
     symbol = models.CharField(max_length=5)
     unit_value = models.IntegerField()
-    image_url = models.URLField(blank=True)
+    image = models.ImageField(upload_to='images/')
 
     def __str__(self):
         return self.description
@@ -99,7 +113,7 @@ class Product(BaseModel):
     barcode = models.CharField(max_length=50)
     family = models.ForeignKey(ProductFamily, on_delete=models.PROTECT)
     company = models.ForeignKey(Company, on_delete=models.PROTECT)
-    image_url = models.URLField()
+    image = models.ImageField(upload_to='images/')
     unit = models.ForeignKey(ProductMeasureUnit, on_delete=models.PROTECT)
 
     def __str__(self):
