@@ -25,8 +25,8 @@ from . import jwt_token
 urlpatterns = [
     path('', redirect_to_api),
     path('admin/', admin.site.urls),
-    path('api/core/', include('core.urls')),
-    path('api/token/', jwt_token.TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/v1/core/', include('core.urls')),
+    path('api/v1/token/', jwt_token.TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/v1/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
