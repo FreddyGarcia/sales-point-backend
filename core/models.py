@@ -3,6 +3,11 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+def user_directory_path(instance, filename):
+    # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
+    filename = uuid.uuid4()
+    return 'user_{0}/{1}'.format(instance.user.id, filename)
+
 # Create your models here.
 class GeneralManager(models.Manager):
     def get_queryset(self):
@@ -45,8 +50,8 @@ class Branch(BaseModel):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100)
     company = models.ForeignKey(Company, on_delete=models.PROTECT)
-    latitude = models.DecimalField(max_digits=9, decimal_places=6)
-    longitude = models.DecimalField(max_digits=9, decimal_places=6)
+    latitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
+    longitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
 
     def __str__(self):
         return self.name

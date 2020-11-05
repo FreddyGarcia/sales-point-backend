@@ -26,6 +26,11 @@ class BranchViewSet(BaseViewSet):
     serializer_class = BranchSerializer
 
 
+class BranchAddressViewSet(BaseViewSet):
+    queryset = BranchAddress.api_objects.all()
+    serializer_class = BranchAddresSerializer
+
+
 class ProductFamilyViewSet(BaseViewSet):
     queryset = ProductFamily.api_objects.all()
     serializer_class = ProductFamilySerializer

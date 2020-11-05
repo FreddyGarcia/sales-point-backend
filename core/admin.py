@@ -1,8 +1,9 @@
-from django.contrib import admin
+from django.contrib.admin import ModelAdmin, TabularInline, site
 from .models import *
-# Register your models here.
+from django.forms.models import BaseInlineFormSet
 
-class BaseModelAdmin(admin.ModelAdmin):
+
+class BaseModelAdmin(ModelAdmin):
     def save_model(self, request, obj, form, change):
         if not change:
             obj.created_by = request.user
@@ -10,12 +11,35 @@ class BaseModelAdmin(admin.ModelAdmin):
         obj.save()
         super().save_model(request, obj, form, change)
 
-    readonly_fields=('created_by', 'updated_by')
+    readonly_fields = ('created_by', 'updated_by')
 
-admin.site.register(Company, BaseModelAdmin)
-admin.site.register(Branch, BaseModelAdmin)
-admin.site.register(BranchAddress, BaseModelAdmin)
-admin.site.register(ProductFamily, BaseModelAdmin)
-admin.site.register(ProductLine, BaseModelAdmin)
-admin.site.register(ProductMeasureUnit, BaseModelAdmin)
-admin.site.register(Product, BaseModelAdmin)
+
+class BranchAddressFormSet(BaseInlineFormSet):
+    def __init__(self, *args, **kwargs):
+        user_id = self.user.id
+        kwargs['initial'] = [ {'created_by': user_id, 'updated_by': user_id}, ]
+        super(BranchAddressFormSet, self).__init__(*args, **kwargs)
+
+
+class BranchAddressInline(TabularInline):
+    model = BranchAddress
+    formset = BranchAddressFormSet
+
+    def get_formset(self, request, obj=None, **kwargs):
+       formset = super(BranchAddressInline, self).get_formset(request, obj, **kwargs)
+       formset.user = request.user
+       return formset
+
+
+
+class BranchAdmin(BaseModelAdmin):
+    inlines = [BranchAddressInline]
+
+
+
+site.register(Company, BaseModelAdmin)
+site.register(Branch, BranchAdmin)
+site.register(ProductFamily, BaseModelAdmin)
+site.register(ProductLine, BaseModelAdmin)
+site.register(ProductMeasureUnit, BaseModelAdmin)
+site.register(Product, BaseModelAdmin)

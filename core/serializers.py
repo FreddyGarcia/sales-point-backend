@@ -31,9 +31,15 @@ class CompanySerializer(BaseSerializer):
         model = Company
 
 
+class BranchAddresSerializer(BaseSerializer):
+
+    class Meta(BaseSerializer.Meta):
+        model = BranchAddress
+
+
 class BranchSerializer(BaseSerializer):
     company = CompanySerializer(read_only=True)
-    company_id = serializers.CharField()
+    branchaddress = BranchAddresSerializer()
 
     class Meta(BaseSerializer.Meta):
         model = Branch
