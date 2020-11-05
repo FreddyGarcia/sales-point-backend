@@ -33,10 +33,22 @@ class BaseModel(models.Model):
         abstract = True
 
 
+class EconomicActivity(BaseModel):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    description = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.description
+
+    class Meta:
+        verbose_name = "Economic activity"
+        verbose_name_plural = "Economic activities"
+
+
 class Company(BaseModel):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100)
-    sector = models.CharField(max_length=100)
+    economic_activity = models.ForeignKey(EconomicActivity, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.name
@@ -89,7 +101,6 @@ class ProductFamily(BaseModel):
 class ProductLine(BaseModel):
     description = models.CharField(max_length=100)
     company = models.ForeignKey(Company, on_delete=models.PROTECT)
-    branch = models.ForeignKey(Branch, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.description
@@ -103,7 +114,6 @@ class ProductMeasureUnit(BaseModel):
     description = models.CharField(max_length=100)
     symbol = models.CharField(max_length=5)
     unit_value = models.IntegerField()
-    image = models.ImageField(upload_to='images/')
 
     def __str__(self):
         return self.description
@@ -119,6 +129,7 @@ class Product(BaseModel):
     family = models.ForeignKey(ProductFamily, on_delete=models.PROTECT)
     company = models.ForeignKey(Company, on_delete=models.PROTECT)
     image = models.ImageField(upload_to='images/')
+    line = models.ForeignKey(ProductLine, on_delete=models.PROTECT)
     unit = models.ForeignKey(ProductMeasureUnit, on_delete=models.PROTECT)
 
     def __str__(self):

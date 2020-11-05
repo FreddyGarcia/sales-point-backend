@@ -50,3 +50,7 @@ class ProductViewSet(BaseViewSet):
     queryset = Product.api_objects.all()
     serializer_class = ProductSerializer
 
+
+class EconomicActivityViewSet(BaseViewSet):
+    queryset = EconomicActivity.api_objects.all()
+    serializer_class = EconomicActivitySerializer

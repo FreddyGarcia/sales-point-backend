@@ -46,6 +46,7 @@ class BranchSerializer(BaseSerializer):
 
 
 class ProductLineSerializer(BaseSerializer):
+    company = CompanySerializer()
 
     class Meta(BaseSerializer.Meta):
         model = ProductLine
@@ -64,6 +65,15 @@ class ProductMeasureUnitSerializer(BaseSerializer):
 
 
 class ProductSerializer(BaseSerializer):
+    unit = ProductMeasureUnitSerializer()
+    family = ProductFamilySerializer()
+    line = ProductLineSerializer()
 
     class Meta(BaseSerializer.Meta):
         model = Product
+
+
+class EconomicActivitySerializer(BaseSerializer):
+
+    class Meta(BaseSerializer.Meta):
+        model = EconomicActivity
