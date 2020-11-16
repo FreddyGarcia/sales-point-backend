@@ -11,7 +11,7 @@ class BaseModelAdmin(ModelAdmin):
         obj.save()
         super().save_model(request, obj, form, change)
 
-    readonly_fields = ('created_by', 'updated_by')
+    readonly_fields = ['created_by', 'updated_by', 'company']
 
 
 class BranchAddressFormSet(BaseInlineFormSet):
@@ -31,16 +31,25 @@ class BranchAddressInline(TabularInline):
        return formset
 
 
-
 class BranchAdmin(BaseModelAdmin):
     inlines = [BranchAddressInline]
 
 
+class CompanyModelAdmin(BaseModelAdmin):
+    readonly_fields = tuple(set(BaseModelAdmin.readonly_fields) - set(('company',)))
 
-site.register(Company, BaseModelAdmin)
+
+class UserProfileModelAdmin(BaseModelAdmin):
+    readonly_fields = ['created_by', 'updated_by', 'user']
+
+
+site.register(UserProfile, UserProfileModelAdmin)
+site.register(CompanyGroup, CompanyModelAdmin)
+site.register(EconomicActivity, CompanyModelAdmin)
+site.register(Company, CompanyModelAdmin)
 site.register(Branch, BranchAdmin)
 site.register(ProductFamily, BaseModelAdmin)
 site.register(ProductLine, BaseModelAdmin)
 site.register(ProductMeasureUnit, BaseModelAdmin)
 site.register(Product, BaseModelAdmin)
-site.register(EconomicActivity, BaseModelAdmin)
+site.register(MediaResource, BaseModelAdmin)

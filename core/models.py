@@ -1,12 +1,8 @@
 import uuid
 from django.db import models
 from django.contrib.auth.models import User
-
-
-def user_directory_path(instance, filename):
-    # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
-    filename = uuid.uuid4()
-    return 'user_{0}/{1}'.format(instance.user.id, filename)
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Create your models here.
 class GeneralManager(models.Manager):
@@ -24,10 +20,46 @@ class BaseModel(models.Model):
     objects = models.Manager()
     api_objects = GeneralManager()
 
+    def from_request(self, request):
+        self.created_by = request.user
+        self.updated_by = request.user
+        return self
+
     def delete(self):
         # do not delete the instance, only disable it
         self.is_enabled = False
         self.save()
+
+    class Meta:
+        abstract = True
+
+
+class CompanyGroup(BaseModel):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
+class Company(BaseModel):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=100)
+    group = models.ForeignKey(CompanyGroup, on_delete=models.PROTECT)
+    user = models.ManyToManyField('UserProfile')
+    economic_activity = models.ForeignKey('EconomicActivity', on_delete=models.PROTECT)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Company"
+        verbose_name_plural = "Companies"
+
+
+class BaseModelCompany(BaseModel):
+
+    company = models.ForeignKey(Company, on_delete=models.PROTECT)
 
     class Meta:
         abstract = True
@@ -45,23 +77,9 @@ class EconomicActivity(BaseModel):
         verbose_name_plural = "Economic activities"
 
 
-class Company(BaseModel):
+class Branch(BaseModelCompany):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100)
-    economic_activity = models.ForeignKey(EconomicActivity, on_delete=models.PROTECT)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = "Company"
-        verbose_name_plural = "Companies"
-
-
-class Branch(BaseModel):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=100)
-    company = models.ForeignKey(Company, on_delete=models.PROTECT)
     latitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
     longitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
 
@@ -73,7 +91,7 @@ class Branch(BaseModel):
         verbose_name_plural = "Branches"
 
 
-class BranchAddress(BaseModel):
+class BranchAddress(BaseModelCompany):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     street = models.CharField(max_length=200)
     city = models.CharField(max_length=200)
@@ -87,7 +105,7 @@ class BranchAddress(BaseModel):
         verbose_name_plural = "Branches Address"
 
 
-class ProductFamily(BaseModel):
+class ProductFamily(BaseModelCompany):
     description = models.CharField(max_length=100)
 
     def __str__(self):
@@ -98,9 +116,8 @@ class ProductFamily(BaseModel):
         verbose_name_plural = "Product Families"
 
 
-class ProductLine(BaseModel):
+class ProductLine(BaseModelCompany):
     description = models.CharField(max_length=100)
-    company = models.ForeignKey(Company, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.description
@@ -110,7 +127,7 @@ class ProductLine(BaseModel):
         verbose_name_plural = "Product Lines"
 
 
-class ProductMeasureUnit(BaseModel):
+class ProductMeasureUnit(BaseModelCompany):
     description = models.CharField(max_length=100)
     symbol = models.CharField(max_length=5)
     unit_value = models.IntegerField()
@@ -123,12 +140,11 @@ class ProductMeasureUnit(BaseModel):
         verbose_name_plural = "Measure Units"
 
 
-class Product(BaseModel):
+class Product(BaseModelCompany):
     description = models.CharField(max_length=200)
     barcode = models.CharField(max_length=50)
     family = models.ForeignKey(ProductFamily, on_delete=models.PROTECT)
-    company = models.ForeignKey(Company, on_delete=models.PROTECT)
-    image = models.ImageField(upload_to='images/')
+    image = models.ForeignKey('MediaResource', on_delete=models.PROTECT)
     line = models.ForeignKey(ProductLine, on_delete=models.PROTECT)
     unit = models.ForeignKey(ProductMeasureUnit, on_delete=models.PROTECT)
 
@@ -138,3 +154,27 @@ class Product(BaseModel):
     class Meta:
         verbose_name = "Product"
         verbose_name_plural = "Products"
+
+
+class UserProfile(BaseModel):
+    user = models.OneToOneField(User, on_delete=models.PROTECT)
+    created_by = models.ForeignKey(User, on_delete=models.PROTECT, related_name='%(class)s_created_by', null=True)
+    updated_by = models.ForeignKey(User, on_delete=models.PROTECT, related_name='%(class)s_updated_by', null=True)
+
+    def __str__(self):
+        return self.user.username
+
+
+class MediaResource(BaseModelCompany):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    content = models.FileField(upload_to='resources')
+
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        UserProfile.objects.create(user=instance)
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.userprofile.save()

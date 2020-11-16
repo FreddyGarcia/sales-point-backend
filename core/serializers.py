@@ -25,7 +25,22 @@ class BaseSerializer(serializers.ModelSerializer):
         exclude = ['created_at', 'updated_at', 'is_enabled', 'created_by', 'updated_by']
 
 
+class EconomicActivitySerializer(BaseSerializer):
+
+    class Meta(BaseSerializer.Meta):
+        model = EconomicActivity
+
+
+class UserCompanySerializer(BaseSerializer):
+    class Meta(BaseSerializer.Meta):
+        exclude = BaseSerializer.Meta.exclude + ['user', 'economic_activity']
+        model = Company
+
+
 class CompanySerializer(BaseSerializer):
+    economic_activity = EconomicActivitySerializer(read_only=True)
+    economic_activity_id = EconomicActivitySerializer(write_only=True)
+
 
     class Meta(BaseSerializer.Meta):
         model = Company
@@ -65,15 +80,23 @@ class ProductMeasureUnitSerializer(BaseSerializer):
 
 
 class ProductSerializer(BaseSerializer):
-    unit = ProductMeasureUnitSerializer()
-    family = ProductFamilySerializer()
-    line = ProductLineSerializer()
+    unit = ProductMeasureUnitSerializer(read_only=True)
+    family = ProductFamilySerializer(read_only=True)
+    line = ProductLineSerializer(read_only=True)
+    image = serializers.URLField(source='image.content', read_only=True)
+
+    unit_id = serializers.IntegerField(write_only=True)
+    image_id = serializers.IntegerField(write_only=True)
+    family_id = serializers.IntegerField(write_only=True)
+    line_id = serializers.IntegerField(write_only=True)
 
     class Meta(BaseSerializer.Meta):
         model = Product
+        exclude = BaseSerializer.Meta.exclude + ['company']
 
 
-class EconomicActivitySerializer(BaseSerializer):
+class MediaResourceSerializer(BaseSerializer):
+    content = serializers.FileField()
 
     class Meta(BaseSerializer.Meta):
-        model = EconomicActivity
+        model = MediaResource
