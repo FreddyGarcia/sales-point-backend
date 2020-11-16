@@ -8,8 +8,12 @@ class BaseSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         Model = self.context.get('view').get_serializer_class().Meta.model
         user = self.context.get('request').user
+
+        company_id = self.context['request'].auth['company']
         validated_data['created_by'] = user
         validated_data['updated_by'] = user
+        validated_data['company_id'] = company_id
+
         obj = Model.objects.create(**validated_data)
         obj.save()
         return obj
