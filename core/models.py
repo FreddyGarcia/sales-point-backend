@@ -23,6 +23,9 @@ class BaseModel(models.Model):
     def from_request(self, request):
         self.created_by = request.user
         self.updated_by = request.user
+
+        if hasattr(self, 'company_id'):
+            self.company_id = request.auth.get('company')
         return self
 
     def delete(self):
@@ -168,6 +171,9 @@ class UserProfile(BaseModel):
 class MediaResource(BaseModelCompany):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     content = models.FileField(upload_to='resources')
+
+    def __str__(self):
+        return str(self.content)
 
 
 @receiver(post_save, sender=User)

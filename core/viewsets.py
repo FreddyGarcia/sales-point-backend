@@ -3,13 +3,15 @@ from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser
-from core.models import Company
+from core.models import Company, MediaResource
 from core.serializers import MediaResourceSerializer, UserCompanySerializer
+from rest_framework import permissions
 
 
 class MediaUploadViewSet(viewsets.ViewSet):
 
     parser_classes = [MultiPartParser]
+    permission_classes = [permissions.IsAuthenticated]
 
 
     def list(self, request):

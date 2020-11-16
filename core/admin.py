@@ -8,6 +8,10 @@ class BaseModelAdmin(ModelAdmin):
         if not change:
             obj.created_by = request.user
         obj.updated_by = request.user
+
+        if hasattr(obj, 'company_id'):
+            obj.company = request.user.userprofile.company_set.first()
+
         obj.save()
         super().save_model(request, obj, form, change)
 

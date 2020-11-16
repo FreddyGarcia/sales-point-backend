@@ -3,7 +3,6 @@ from rest_framework import pagination
 from .serializers import *
 from .models import *
 
-
 class DefaultResultsSetPagination(pagination.PageNumberPagination):
     page_size = 100
     page_size_query_param = 'page_size'
