@@ -1,5 +1,6 @@
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
+from core.models import Company
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     def get_token(self, user):
@@ -11,6 +12,9 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
         if company_id is None:
             raise Exception('company_id required')
+
+        if not Company.api_objects.filter(id=company_id).exists():
+            raise Exception('Invalid company')
 
         # Add custom claims
         token['firstname'] = user.first_name

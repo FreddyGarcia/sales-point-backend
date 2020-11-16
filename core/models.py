@@ -25,7 +25,8 @@ class BaseModel(models.Model):
         self.updated_by = request.user
 
         if hasattr(self, 'company_id'):
-            self.company_id = request.auth.get('company')
+            company = Company.api_objects.get(pk=request.auth.get('company'))
+            self.company = company
         return self
 
     def delete(self):
