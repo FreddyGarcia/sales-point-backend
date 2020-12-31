@@ -8,7 +8,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
         request = self.context["request"]
 
-        company_id = request.POST.get('company_id')
+        company_id = request.data.get('company_id')
 
         if company_id is None:
             raise Exception('company_id required')
