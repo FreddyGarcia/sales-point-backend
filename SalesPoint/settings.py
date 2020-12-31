@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'xgq+k%6%!(*e*)95o!^r-uu9idfdq!u((+nxa&o7uk*-8#jwob'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', True)
 
-ALLOWED_HOSTS = ['jf-sales-point.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = '*' # ['jf-sales-point.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -86,14 +86,15 @@ WSGI_APPLICATION = 'SalesPoint.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dbmo02n76bn8kp',
-        'USER': 'meytimwgnsvynt',
-        'PASSWORD': '10d98a95878d07067f2b79028252c21086615bdb03e3b4ba9248fbf32726fbee',
-        'HOST': 'ec2-18-210-90-1.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': os.environ.get('DB_ENGINE', 'django.db.backends.sqlite3'),
+        'NAME': os.environ.get('DB_NAME', 'salespoint'),
+        'USER': os.environ.get('DB_USER', 'postgres'),
+        'PASSWORD': os.environ.get'DB_PASSWORD', ( 'pg'),
+        'HOST': os.environ.get('DB_HOST', '127.0.0.1'),
+        'PORT': os.environ.get('DB_PORT', '5432'),
     }
 }
 
