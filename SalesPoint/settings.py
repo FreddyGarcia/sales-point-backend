@@ -48,7 +48,8 @@ PLUGINS = [
 
 OWN_APPS = [
     'apps.core',
-    'apps.crm'
+    'apps.crm',
+    'apps.inventory',
 ]
 
 INSTALLED_APPS = BUILTIN_APPS + PLUGINS + OWN_APPS

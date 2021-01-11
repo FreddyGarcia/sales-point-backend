@@ -19,7 +19,7 @@ class BaseModelAdmin(ModelAdmin):
         obj.save()
         super().save_model(request, obj, form, change)
 
-    readonly_fields = ['created_by', 'updated_by', 'company']
+    readonly_fields = ['created_by', 'updated_by']
 
 
 

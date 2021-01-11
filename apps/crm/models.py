@@ -24,12 +24,12 @@ class Company(BaseModel):
         verbose_name_plural = "Companies"
 
 
-
 class EconomicActivity(BaseModel):
+    name = models.CharField(max_length=30)
     description = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.description
+        return self.name
 
     class Meta:
         verbose_name = "Economic activity"
