@@ -12,7 +12,9 @@ class BaseSerializer(serializers.ModelSerializer):
         company_id = self.context['request'].auth['company']
         validated_data['created_by'] = user
         validated_data['updated_by'] = user
-        validated_data['company_id'] = company_id
+
+        if getattr(Model, 'company', None):
+            validated_data['company_id'] = company_id
 
         obj = Model.objects.create(**validated_data)
         obj.save()
@@ -26,7 +28,7 @@ class BaseSerializer(serializers.ModelSerializer):
         return instance
 
     class Meta:
-        exclude = ['created_at', 'updated_at', 'is_enabled', 'created_by', 'updated_by']
+        exclude = ['created_by', 'updated_by']
 
 
 class EconomicActivitySerializer(BaseSerializer):
@@ -35,22 +37,32 @@ class EconomicActivitySerializer(BaseSerializer):
         model = EconomicActivity
 
 
-class UserCompanySerializer(BaseSerializer):
+class CompanyGroupSerializer(BaseSerializer):
     class Meta(BaseSerializer.Meta):
-        exclude = BaseSerializer.Meta.exclude + ['user', 'economic_activity']
-        model = Company
+        model = CompanyGroup
 
 
 class CompanySerializer(BaseSerializer):
     economic_activity = EconomicActivitySerializer(read_only=True)
-    economic_activity_id = EconomicActivitySerializer(write_only=True)
+    economic_activity_id = serializers.IntegerField(write_only=True)
+
+    group = CompanyGroupSerializer(read_only=True)
+    group_id = serializers.IntegerField(write_only=True)
 
 
     class Meta(BaseSerializer.Meta):
         model = Company
 
 
+class UserCompanySerializer(serializers.Serializer):
+    id = serializers.CharField()
+    unique_id = serializers.CharField()
+    name = serializers.CharField()
+
+
 class BranchAddresSerializer(BaseSerializer):
+    branch = serializers.CharField(read_only=True)
+    branch_id = serializers.CharField(write_only=True)
 
     class Meta(BaseSerializer.Meta):
         model = BranchAddress
@@ -58,45 +70,11 @@ class BranchAddresSerializer(BaseSerializer):
 
 class BranchSerializer(BaseSerializer):
     company = CompanySerializer(read_only=True)
-    branchaddress = BranchAddresSerializer()
+    branchaddress = BranchAddresSerializer(read_only=True)
+    branchaddress_id = serializers.CharField(write_only=True)
 
     class Meta(BaseSerializer.Meta):
         model = Branch
-
-
-class ProductLineSerializer(BaseSerializer):
-    company = CompanySerializer()
-
-    class Meta(BaseSerializer.Meta):
-        model = ProductLine
-
-
-class ProductFamilySerializer(BaseSerializer):
-
-    class Meta(BaseSerializer.Meta):
-        model = ProductFamily
-
-
-class ProductMeasureUnitSerializer(BaseSerializer):
-
-    class Meta(BaseSerializer.Meta):
-        model = ProductMeasureUnit
-
-
-class ProductSerializer(BaseSerializer):
-    unit = ProductMeasureUnitSerializer(read_only=True)
-    family = ProductFamilySerializer(read_only=True)
-    line = ProductLineSerializer(read_only=True)
-    image = serializers.URLField(source='image.content', read_only=True)
-
-    unit_id = serializers.IntegerField(write_only=True)
-    image_id = serializers.IntegerField(write_only=True)
-    family_id = serializers.IntegerField(write_only=True)
-    line_id = serializers.IntegerField(write_only=True)
-
-    class Meta(BaseSerializer.Meta):
-        model = Product
-        exclude = BaseSerializer.Meta.exclude + ['company']
 
 
 class MediaResourceSerializer(BaseSerializer):
