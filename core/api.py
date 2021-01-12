@@ -1,8 +1,10 @@
 from rest_framework import viewsets, permissions, filters, pagination
+from django.contrib.auth.models import Permission, Group
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from .serializers import *
 from .models import *
+
 
 class DefaultResultsSetPagination(pagination.PageNumberPagination):
     page_size = 100
@@ -57,7 +59,11 @@ class EconomicActivityViewSet(BaseViewSet):
 
 
 class PermissionViewSet(viewsets.ViewSet):
-    queryset = User.objects.all()
+    
+    def list(self, request):
+        queryset = Permission.objects.all()
+        serializer_class = queryset.values_list('name', flat=True)
+        return Response(serializer_class) 
 
     def retrieve(self, request, pk=None):
         queryset = User.objects.filter(username=pk).first()
@@ -66,8 +72,12 @@ class PermissionViewSet(viewsets.ViewSet):
 
 
 class GroupViewSet(viewsets.ViewSet):
-    queryset = User.objects.all()
-   
+
+    def list(self, request):
+        queryset = Group.objects.all()
+        serializer_class = queryset.values_list('name', flat=True)
+        return Response(serializer_class) 
+
     def retrieve(self, request, pk=None):
         queryset = User.objects.filter(username=pk).first()
         serializer_class = queryset.groups.values_list('name', flat=True)
