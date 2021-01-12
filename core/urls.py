@@ -14,6 +14,8 @@ router.register('product', api.ProductViewSet)
 router.register('ecomic-activity', api.EconomicActivityViewSet)
 router.register('media-upload', viewsets.MediaUploadViewSet, basename='media_upload')
 router.register('user-company', viewsets.UserCompanyViewSet, basename='user_company')
+router.register('permission', api.PermissionViewSet)
+router.register('group', api.GroupViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

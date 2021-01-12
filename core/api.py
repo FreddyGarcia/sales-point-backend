@@ -1,5 +1,6 @@
-from rest_framework import viewsets, permissions, filters
-from rest_framework import pagination
+from rest_framework import viewsets, permissions, filters, pagination
+from rest_framework.decorators import action
+from rest_framework.response import Response
 from .serializers import *
 from .models import *
 
@@ -53,3 +54,22 @@ class ProductViewSet(BaseViewSet):
 class EconomicActivityViewSet(BaseViewSet):
     queryset = EconomicActivity.api_objects.all()
     serializer_class = EconomicActivitySerializer
+
+
+class PermissionViewSet(viewsets.ViewSet):
+    queryset = User.objects.all()
+
+    def retrieve(self, request, pk=None):
+        queryset = User.objects.filter(username=pk).first()
+        serializer_class = queryset.user_permissions.values_list('name', flat=True)
+        return Response(serializer_class)  
+
+
+class GroupViewSet(viewsets.ViewSet):
+    queryset = User.objects.all()
+   
+    def retrieve(self, request, pk=None):
+        queryset = User.objects.filter(username=pk).first()
+        serializer_class = queryset.groups.values_list('name', flat=True)
+        return Response(serializer_class)  
+        
