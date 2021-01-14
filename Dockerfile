@@ -16,4 +16,6 @@ RUN chmod 777 ./docker-setup.sh
 
 RUN ./docker-setup.sh
 
-CMD gunicorn app.wsgi --bind :$PORT --worker-class gevent
+CMD gunicorn app.wsgi --bind :$APP_PORT --worker-class gevent
+
+EXPOSE 8000
