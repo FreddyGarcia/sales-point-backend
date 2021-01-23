@@ -3,9 +3,10 @@ from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser
-from core.models import Company, MediaResource
-from core.serializers import MediaResourceSerializer, UserCompanySerializer
+from apps.crm.models import Company, MediaResource
+from apps.crm.serializers import MediaResourceSerializer, UserCompanySerializer
 from rest_framework import permissions
+from rest_framework import status
 
 
 class MediaUploadViewSet(viewsets.ViewSet):
@@ -15,7 +16,7 @@ class MediaUploadViewSet(viewsets.ViewSet):
 
 
     def list(self, request):
-        queryset = MediaResource.api_objects.all()
+        queryset = MediaResource.active.all()
         serializer = MediaResourceSerializer(queryset, many=True)
         return Response(serializer.data)
 
@@ -36,10 +37,18 @@ class MediaUploadViewSet(viewsets.ViewSet):
 
 class UserCompanyViewSet(viewsets.ViewSet):
 
+    authentication_classes = []
+
     def retrieve(self, request, pk):
-        queryset = Company.api_objects.filter(user__user__username=pk)
-        serializer = UserCompanySerializer(queryset, many=True)
-        return Response(serializer.data)
+
+        user = User.objects.filter(username=pk).first()
+
+        if user:
+            branches = user.userprofile.branches.values('id', 'unique_id', 'name')
+            serializer = UserCompanySerializer(branches, many=True)
+            return Response(serializer.data)
+        
+        return Response(status=status.HTTP_404_NOT_FOUND)
 
     def list(self, request):
-        pass
+        return Response(status=status.HTTP_200_OK)

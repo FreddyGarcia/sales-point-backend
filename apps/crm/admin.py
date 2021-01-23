@@ -1,21 +1,8 @@
 from django.contrib.admin import ModelAdmin, TabularInline, site
 from .models import *
+from apps.core.admin import BaseModelAdmin
 from django.forms.models import BaseInlineFormSet
 
-
-class BaseModelAdmin(ModelAdmin):
-    def save_model(self, request, obj, form, change):
-        if not change:
-            obj.created_by = request.user
-        obj.updated_by = request.user
-
-        if hasattr(obj, 'company_id'):
-            obj.company = request.user.userprofile.company_set.first()
-
-        obj.save()
-        super().save_model(request, obj, form, change)
-
-    readonly_fields = ['created_by', 'updated_by', 'company']
 
 
 class BranchAddressFormSet(BaseInlineFormSet):
@@ -37,23 +24,19 @@ class BranchAddressInline(TabularInline):
 
 class BranchAdmin(BaseModelAdmin):
     inlines = [BranchAddressInline]
+    readonly_fields = tuple(set(BaseModelAdmin.readonly_fields) - set(('company',)))
 
 
 class CompanyModelAdmin(BaseModelAdmin):
     readonly_fields = tuple(set(BaseModelAdmin.readonly_fields) - set(('company',)))
 
 
-class UserProfileModelAdmin(BaseModelAdmin):
-    readonly_fields = ['created_by', 'updated_by', 'user']
+class MediaResourceModelAdmin(BaseModelAdmin):
+    readonly_fields = tuple(set(BaseModelAdmin.readonly_fields) - set(('company',)))
 
 
-site.register(UserProfile, UserProfileModelAdmin)
 site.register(CompanyGroup, CompanyModelAdmin)
 site.register(EconomicActivity, CompanyModelAdmin)
 site.register(Company, CompanyModelAdmin)
 site.register(Branch, BranchAdmin)
-site.register(ProductFamily, BaseModelAdmin)
-site.register(ProductLine, BaseModelAdmin)
-site.register(ProductMeasureUnit, BaseModelAdmin)
-site.register(Product, BaseModelAdmin)
-site.register(MediaResource, BaseModelAdmin)
+site.register(MediaResource, MediaResourceModelAdmin)

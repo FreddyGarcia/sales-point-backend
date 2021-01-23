@@ -1,0 +1,353 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$J26zFXzr3ifo$cAQji/ok+kMkFX9C/+4lNkqjhsLGF+JpURyNXsHyii8=",
+            "last_login": "2020-10-26T03:37:24.053Z",
+            "is_superuser": true,
+            "username": "chito",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2020-10-26T01:28:37.538Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$StIWzTqqIfke$styPXJKpu7OBB9wB2RvLT/2tFhwZQjEqOxehO1f8mQM=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "tester",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2020-10-26T03:05:04.962Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$mCnIYdBIe7Hv$Ww68vkWjPvrAFPdw10daLl409UZ7mH9Hj78IlOj0CGc=",
+            "last_login": null,
+            "is_superuser": true,
+            "username": "janfry",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2020-10-26T03:53:53Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "core.userprofile",
+        "pk": 1,
+        "fields": {
+            "created": "2021-01-11T02:19:38.088Z",
+            "modified": "2021-01-11T02:19:58.699Z",
+            "is_removed": false,
+            "unique_id": "P5jBaYSthsTvPcsXNYXdErDJ",
+            "user": 1,
+            "created_by": null,
+            "updated_by": null,
+            "branches": []
+        }
+    },
+    {
+        "model": "core.userprofile",
+        "pk": 2,
+        "fields": {
+            "created": "2021-01-11T02:20:08.894Z",
+            "modified": "2021-01-11T02:20:33.132Z",
+            "is_removed": false,
+            "unique_id": "NiqQ363fVc8KCC9eC6dMu4xZ",
+            "user": 2,
+            "created_by": 1,
+            "updated_by": 1,
+            "branches": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "crm.companygroup",
+        "pk": 1,
+        "fields": {
+            "created": "2021-01-11T00:17:57.416Z",
+            "modified": "2021-01-11T00:17:57.416Z",
+            "is_removed": false,
+            "unique_id": "fd5r4BQuqsMCBTR5w4AoKubJ",
+            "created_by": 1,
+            "updated_by": 1,
+            "name": "sdasd"
+        }
+    },
+    {
+        "model": "crm.company",
+        "pk": 1,
+        "fields": {
+            "created": "2021-01-11T00:18:02.275Z",
+            "modified": "2021-01-11T00:18:02.278Z",
+            "is_removed": false,
+            "unique_id": "QTJikjf8jThMvrNfct3QMbTn",
+            "created_by": 1,
+            "updated_by": 1,
+            "name": "asd",
+            "group": 1,
+            "economic_activity": 1
+        }
+    },
+    {
+        "model": "crm.company",
+        "pk": 2,
+        "fields": {
+            "created": "2021-01-11T01:25:36.856Z",
+            "modified": "2021-01-11T01:25:36.859Z",
+            "is_removed": false,
+            "unique_id": "gYuMAsPtXJ2PScKBL3dFYpHq",
+            "created_by": 2,
+            "updated_by": 2,
+            "name": "TEST",
+            "group": 1,
+            "economic_activity": 1
+        }
+    },
+    {
+        "model": "crm.company",
+        "pk": 3,
+        "fields": {
+            "created": "2021-01-11T02:20:48.879Z",
+            "modified": "2021-01-11T02:20:48.881Z",
+            "is_removed": false,
+            "unique_id": "KrpqAV9NCnjF7gNp36uKqfdJ",
+            "created_by": 2,
+            "updated_by": 2,
+            "name": "TEST",
+            "group": 1,
+            "economic_activity": 1
+        }
+    },
+    {
+        "model": "crm.economicactivity",
+        "pk": 1,
+        "fields": {
+            "created": "2021-01-11T00:18:00.761Z",
+            "modified": "2021-01-11T00:18:00.761Z",
+            "is_removed": false,
+            "unique_id": "htVbhntcaNhNHAp3ct6fJK4P",
+            "created_by": 1,
+            "updated_by": 1,
+            "name": "",
+            "description": "asdasd"
+        }
+    },
+    {
+        "model": "crm.economicactivity",
+        "pk": 2,
+        "fields": {
+            "created": "2021-01-11T00:22:19.550Z",
+            "modified": "2021-01-11T00:22:19.552Z",
+            "is_removed": false,
+            "unique_id": "QLQpkUXQbyKHtsfzoS77pRXu",
+            "created_by": 2,
+            "updated_by": 2,
+            "name": "",
+            "description": "asdasd"
+        }
+    },
+    {
+        "model": "crm.economicactivity",
+        "pk": 3,
+        "fields": {
+            "created": "2021-01-11T02:02:57.097Z",
+            "modified": "2021-01-11T02:02:57.100Z",
+            "is_removed": false,
+            "unique_id": "GGGWfyPoStpLbEf9S56uKSPY",
+            "created_by": 2,
+            "updated_by": 2,
+            "name": "",
+            "description": "asdasd"
+        }
+    },
+    {
+        "model": "crm.economicactivity",
+        "pk": 4,
+        "fields": {
+            "created": "2021-01-11T02:20:42.850Z",
+            "modified": "2021-01-11T02:20:42.852Z",
+            "is_removed": false,
+            "unique_id": "TuLARaopVrCyZvr5bGDxhBmt",
+            "created_by": 2,
+            "updated_by": 2,
+            "name": "asdasd",
+            "description": "asdasd"
+        }
+    },
+    {
+        "model": "crm.branch",
+        "pk": 1,
+        "fields": {
+            "created": "2021-01-11T00:18:05.953Z",
+            "modified": "2021-01-11T00:18:05.960Z",
+            "is_removed": false,
+            "unique_id": "hNSwSss3hrYbV6p858e47Vda",
+            "created_by": 1,
+            "updated_by": 1,
+            "name": "asd",
+            "latitude": null,
+            "longitude": null,
+            "company": 1
+        }
+    },
+    {
+        "model": "crm.branch",
+        "pk": 2,
+        "fields": {
+            "created": "2021-01-11T01:59:12.256Z",
+            "modified": "2021-01-11T01:59:12.259Z",
+            "is_removed": false,
+            "unique_id": "b2sGrtweRGhdzNum3TG4bs5T",
+            "created_by": 2,
+            "updated_by": 2,
+            "name": "TEST",
+            "latitude": null,
+            "longitude": null,
+            "company": 1
+        }
+    },
+    {
+        "model": "crm.branch",
+        "pk": 3,
+        "fields": {
+            "created": "2021-01-11T02:02:17.091Z",
+            "modified": "2021-01-11T02:02:17.093Z",
+            "is_removed": false,
+            "unique_id": "Rmba2kA5vAMEGvC8dcyQ2SaX",
+            "created_by": 2,
+            "updated_by": 2,
+            "name": "TEST",
+            "latitude": "2.223130",
+            "longitude": "2.223130",
+            "company": 1
+        }
+    },
+    {
+        "model": "crm.branch",
+        "pk": 4,
+        "fields": {
+            "created": "2021-01-11T02:20:46.795Z",
+            "modified": "2021-01-11T02:20:46.800Z",
+            "is_removed": false,
+            "unique_id": "Ddw2JXvU4zSp3UT8prZMLHko",
+            "created_by": 2,
+            "updated_by": 2,
+            "name": "TEST",
+            "latitude": "2.223130",
+            "longitude": "2.223130",
+            "company": 1
+        }
+    },
+    {
+        "model": "crm.branchaddress",
+        "pk": 1,
+        "fields": {
+            "created": "2021-01-11T00:18:05.956Z",
+            "modified": "2021-01-11T00:18:05.956Z",
+            "is_removed": false,
+            "unique_id": "N5j4XpmC6p7zRusBhPcfw5ip",
+            "created_by": 1,
+            "updated_by": 1,
+            "street": "asd",
+            "city": "asd",
+            "branch": 1
+        }
+    },
+    {
+        "model": "crm.branchaddress",
+        "pk": 2,
+        "fields": {
+            "created": "2021-01-11T00:20:08.635Z",
+            "modified": "2021-01-11T00:20:08.638Z",
+            "is_removed": false,
+            "unique_id": "Xri8BHbtUaGys4PD6SfNMGCV",
+            "created_by": 2,
+            "updated_by": 2,
+            "street": "test",
+            "city": "test",
+            "branch": 1
+        }
+    },
+    {
+        "model": "crm.branchaddress",
+        "pk": 3,
+        "fields": {
+            "created": "2021-01-11T02:02:22.627Z",
+            "modified": "2021-01-11T02:02:22.629Z",
+            "is_removed": false,
+            "unique_id": "KxQHyN6DLmBryPAgSYZvrSL9",
+            "created_by": 2,
+            "updated_by": 2,
+            "street": "test",
+            "city": "test",
+            "branch": 1
+        }
+    },
+    {
+        "model": "crm.branchaddress",
+        "pk": 4,
+        "fields": {
+            "created": "2021-01-11T02:20:50.490Z",
+            "modified": "2021-01-11T02:20:50.493Z",
+            "is_removed": false,
+            "unique_id": "LVGKCqpMMVSJu7yaC7yXTAEt",
+            "created_by": 2,
+            "updated_by": 2,
+            "street": "test",
+            "city": "test",
+            "branch": 1
+        }
+    },
+    {
+        "model": "crm.branchaddress",
+        "pk": 5,
+        "fields": {
+            "created": "2021-01-11T02:20:55.115Z",
+            "modified": "2021-01-11T02:20:55.118Z",
+            "is_removed": false,
+            "unique_id": "QwSg7QH7KZwf7Hij2DCxFdmQ",
+            "created_by": 2,
+            "updated_by": 2,
+            "street": "test",
+            "city": "test",
+            "branch": 1
+        }
+    },
+    {
+        "model": "crm.mediaresource",
+        "pk": 1,
+        "fields": {
+            "created": "2021-01-11T00:28:17.359Z",
+            "modified": "2021-01-11T00:28:17.364Z",
+            "is_removed": false,
+            "unique_id": "WpFqekx56HX3AJ9RUix7g2CE",
+            "created_by": 1,
+            "updated_by": 1,
+            "content": "resources/giphy_BgxYs2v.gif",
+            "company": 1
+        }
+    }
+]
