@@ -31,10 +31,10 @@ class ProductSerializer(BaseSerializer):
     line = ProductLineSerializer(read_only=True)
     image = serializers.URLField(source='image.content', read_only=True)
 
-    unit_id = serializers.IntegerField(write_only=True)
-    image_id = serializers.IntegerField(write_only=True)
-    family_id = serializers.IntegerField(write_only=True)
-    line_id = serializers.IntegerField(write_only=True)
+    unit_id = serializers.IntegerField()
+    image_id = serializers.IntegerField()
+    family_id = serializers.IntegerField()
+    line_id = serializers.IntegerField()
 
     class Meta(BaseSerializer.Meta):
         model = Product

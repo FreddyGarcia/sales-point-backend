@@ -44,8 +44,8 @@ class UserCompanyViewSet(viewsets.ViewSet):
         user = User.objects.filter(username=pk).first()
 
         if user:
-            branches = user.userprofile.branches.values('id', 'unique_id', 'name')
-            serializer = UserCompanySerializer(branches, many=True)
+            companies = [ br.company for br in user.userprofile.branches.all()]
+            serializer = UserCompanySerializer(companies, many=True)
             return Response(serializer.data)
         
         return Response(status=status.HTTP_404_NOT_FOUND)

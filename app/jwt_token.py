@@ -8,7 +8,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token = super().get_token(user)
 
         request = self.context["request"]
-        company_id = request.data.get('company_id')
+        company_id = request.data.get('company')
 
         # Add custom claims
         token['firstname'] = user.first_name
