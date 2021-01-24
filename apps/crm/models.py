@@ -53,7 +53,7 @@ class Branch(BaseModel):
 class BranchAddress(BaseModel):
     street = models.CharField(max_length=200)
     city = models.CharField(max_length=200)
-    branch = models.ForeignKey(Branch, on_delete=models.PROTECT)
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.street} / {self.city}'
@@ -65,6 +65,7 @@ class BranchAddress(BaseModel):
 
 class MediaResource(BaseModel):
     content = models.FileField(upload_to='resources')
+    tags = models.CharField(max_length=100, default='')
     company = models.ForeignKey(Company, on_delete=models.PROTECT)
 
     def __str__(self):

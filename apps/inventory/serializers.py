@@ -30,6 +30,7 @@ class ProductSerializer(BaseSerializer):
     family = ProductFamilySerializer(read_only=True)
     line = ProductLineSerializer(read_only=True)
     image = serializers.URLField(source='image.content', read_only=True)
+    company = CompanySerializer(read_only=True)
 
     unit_id = serializers.IntegerField()
     image_id = serializers.IntegerField()
