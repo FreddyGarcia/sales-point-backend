@@ -14,6 +14,7 @@ Django = "==3.1.2"
 Pillow = "==8.0.1"
 django-model-utils = "*"
 shortuuid = "*"
+djangorestframework-camel-case = "*"
 
 [dev-packages]
 ipdb = "*"

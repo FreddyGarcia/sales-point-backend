@@ -21,15 +21,6 @@ class BaseModel(TimeStampedModel, SoftDeletableModel, models.Model):
     objects = models.Manager()
     active = SoftDeletableManager()
 
-    def from_request(self, request):
-        self.created_by = request.user
-        self.updated_by = request.user
-
-        if hasattr(self, 'company_id'):
-            company = Company.active.get(pk=request.auth.get('company'))
-            self.company = company
-        return self
-
     class Meta:
         abstract = True
         default_manager_name = 'active'
@@ -50,8 +41,8 @@ class BaseModel(TimeStampedModel, SoftDeletableModel, models.Model):
 
 class UserProfile(BaseModel):
     user = models.OneToOneField(User, on_delete=models.PROTECT)
-    created_by = models.OneToOneField(User, on_delete=models.PROTECT, related_name='%(class)s_created_by', null=True)
-    updated_by = models.OneToOneField(User, on_delete=models.PROTECT, related_name='%(class)s_updated_by', null=True)
+    created_by = models.ForeignKey(User, on_delete=models.PROTECT, related_name='%(class)s_created_by', null=True)
+    updated_by = models.ForeignKey(User, on_delete=models.PROTECT, related_name='%(class)s_updated_by', null=True)
     branches = models.ManyToManyField('crm.Branch')
 
     def __str__(self):

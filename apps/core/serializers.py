@@ -4,7 +4,7 @@ from rest_framework import serializers
 class BaseSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
-        Model = self.context.get('view').get_serializer_class().Meta.model
+        Model = self.Meta.model
         user = self.context.get('request').user
 
         company_id = self.context['request'].auth['company']

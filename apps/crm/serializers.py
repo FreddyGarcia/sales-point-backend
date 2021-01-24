@@ -49,6 +49,8 @@ class BranchSerializer(BaseSerializer):
 
 class MediaResourceSerializer(BaseSerializer):
     content = serializers.FileField()
+    tags = serializers.CharField(required=False)
+    company = CompanySerializer(read_only=True)
 
     class Meta(BaseSerializer.Meta):
         model = MediaResource
