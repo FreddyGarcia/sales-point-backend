@@ -14,6 +14,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token['firstname'] = user.first_name
         token['lastname'] = user.last_name
         token['email'] = user.email
+        token['company'] = company_id
 
         if user.is_superuser:
             return token
@@ -24,7 +25,6 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         if not Company.active.filter(id=company_id).exists():
             raise Exception('Invalid company')
 
-        token['company'] = company_id
         return token
 
 
