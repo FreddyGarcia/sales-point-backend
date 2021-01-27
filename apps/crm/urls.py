@@ -7,6 +7,7 @@ router = routers.DefaultRouter()
 
 router.register('branches', api.BranchViewSet)
 router.register('branch-addresses', api.BranchAddressViewSet)
+router.register('company-groups', api.CompanyGroupViewSet, basename='company-groups')
 router.register('companies', api.CompanyViewSet)
 router.register('ecomic-activities', api.EconomicActivityViewSet)
 router.register('media-uploads', viewsets.MediaUploadViewSet, basename='media_upload')

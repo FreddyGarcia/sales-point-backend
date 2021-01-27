@@ -3,6 +3,10 @@ from .serializers import *
 from .models import *
 from apps.core.api import BaseViewSet
 
+class CompanyGroupViewSet(BaseViewSet):
+    queryset = CompanyGroup.active.all()
+    serializer_class = CompanyGroupSerializer
+
 class CompanyViewSet(BaseViewSet):
     queryset = Company.active.all()
     serializer_class = CompanySerializer
